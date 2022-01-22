@@ -34,6 +34,8 @@ const cartStore = createSlice({
 
 export const cartReducer = cartStore.reducer;
 
+
+
 export const {
   addToCart,
   incrementQuantity,

@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 const Header = () => {
   const cart = useSelector((state) => state.cart);
-
+ 
   const getItemsCount = () => {
     return cart.reduce((accumulator, item) => accumulator + item.quantity, 0);
   };
@@ -15,7 +15,7 @@ const Header = () => {
       <h1 className={styles.h1}>Projeto-loja</h1>
     </Link>
     <Link href="/cart">
-     <h2 className={styles.h2}>Carrinho ({getItemsCount()})</h2>
+    <h2 className={styles.h2}>Carrinho ({getItemsCount()})</h2>
     </Link>
   </header>
   )
