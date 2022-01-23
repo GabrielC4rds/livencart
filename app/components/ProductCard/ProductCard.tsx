@@ -1,20 +1,21 @@
-import styles from './ProductCard.module.css';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../../redux/cartStore';
+import {Cards, Image, NamePrice, Button} from './ProductCard.module';
+
 
 const ProductCard = ({product}) => {
   const dispatch = useDispatch();
+  //aqui estou usando a função para mandar um produto especifico por vez para o carrinho
   return (
     <div>
-      <div className={styles.card}>
-        <img className={styles.image} src={product.image} />
-        <div className={styles.namePrice}>
-
+      <Cards>
+        <Image src={product.image}/>
+        <NamePrice>
           <label>{product.name}</label>
           <label>{product.price}</label>
-        </div>
-        <button onClick={() => dispatch(addToCart(product))}>Adicionar ao carrinho</button>
-      </div>
+        </NamePrice>
+        <Button id="Button" onClick={() => dispatch(addToCart(product))}>Adicionar ao carrinho</Button>
+      </Cards>
     </div>
   )
 

@@ -1,4 +1,4 @@
-import styles from './Header.module.css';
+import {Navbar, Title, SubTitle} from './Header.module';
 import Link from 'next/link';
 import { useSelector } from 'react-redux';
 
@@ -10,14 +10,14 @@ const Header = () => {
   };
   return(
 
-  <header className={styles.header}>
+  <Navbar>
     <Link href="/">
-      <h1 className={styles.h1}>Projeto-loja</h1>
+      <Title>Projeto-loja</Title>
     </Link>
     <Link href="/cart">
-    <h2 className={styles.h2}>Carrinho ({getItemsCount()})</h2>
+    <SubTitle>Carrinho ({getItemsCount()})</SubTitle>
     </Link>
-  </header>
+  </Navbar>
   )
 }
 

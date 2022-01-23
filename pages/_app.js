@@ -7,6 +7,7 @@ import store from '../redux/store';
 
 function MyApp({ Component, pageProps }) {
   let persistor = persistStore(store);
+  //usando persistStore para persistir os dados no local storage
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>

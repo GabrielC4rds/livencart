@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   incrementQuantity,
@@ -6,12 +5,13 @@ import {
   removeFromCart,
 } from '../redux/cartStore';
 import styles from '../styles/cart.module.css';
-
+//pagina de carrinho
 const CartPage = () => {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
   const getTotalPrice = () => {
+    //pegar o preço total
     return cart.reduce(
       (accumulator, item) => accumulator + item.quantity * item.price,
       0
